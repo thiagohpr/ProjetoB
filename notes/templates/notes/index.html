@@ -15,34 +15,22 @@
     <label for="detalhes">Detalhes</label>
     <textarea id="detalhes" name="detalhes"></textarea>
     <input class="btn" type="submit" />
+
     </form>
 
 
     <div class="card-container">
         {% for note in notes %}
         <div class="card">
-            <h3 contenteditable="true" class="card-title">{{note.title}}</h3>
+            <h3 class="card-title">{{note.title}}</h3>
             <div class="card-content">
-              <p contenteditable="true">{{note.content}}</p>
+              <p>{{note.content}}</p>
             </div>
             <a href="delete/{{note.id}}" > X </a>
         </div>
         {% endfor %}
     </div>
-    <!-- <div class="card-container">
-        {% for note in notes %}
-        <form class="card" method="post">
-            {% csrf_token %}
-            
-            <h3><input class="card-title" id="titulo" type="text" name="titulo"/>{{note.title}}</h3>
-            <div class="card-content">
-                <p><textarea id="detalhes" name="detalhes">{{note.content}}</textarea></p>
-            </div>
+    
 
-            <input class="btn" type="submit" />
-            <a href="delete/{{note.id}}" > X </a>
-        </form>
-        {% endfor %}
-    </div> -->
 </main>
 {% endblock %}
